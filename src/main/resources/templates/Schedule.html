@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Worker's Schedules Page</title>
+</head>
+<body>
+<h1>Time Sheet:</h1>
+
+<form th:action="schedule" th:method="post" th:object="${Employees}">
+	<label for="firstName">First Name :</label>
+	<input type="text" th:field="*{firstName}"> 
+	
+	<label for="lastName">Last Name :</label>
+	<input type="text" th:field="*{lastName}">
+	
+	<label for="email"> Email :</label>
+	<input type="email" th:field="*{email}">
+	
+	<label for="workDays"> Days Scheduled to Work For :</label>
+	<input type="date" th:field="*{workDays}">
+	
+	<label for="timeIn"> Time In :</label>
+	<input type="text" th:field="*{timeIn}">
+	
+	<label for="timeOut"> Time Out :</label>
+	<input type="text" th:field="*{timeOut}">
+	
+	<button type="submit">Submit</button>
+</form>
+	<br/>
+	<h3 th:text="${message}">message</h3>
+</body>
+</html>
